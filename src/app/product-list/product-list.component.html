@@ -8,9 +8,10 @@
     </a>
   </h3>
 
-  <p *ngIf="product.description">
+  <p *ngIf="product.description; else elseBlock">
     Description: {{ product.description }}
   </p>
+  <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 
   <button (click) = "share()">
     share
